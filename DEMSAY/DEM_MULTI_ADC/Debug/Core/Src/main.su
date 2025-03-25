@@ -1,0 +1,12 @@
+../Core/Src/main.c:69:8:Termistor	32	static
+../Core/Src/main.c:80:10:R_map_value	24	static
+../Core/Src/main.c:86:10:map_to_percentage	16	static
+../Core/Src/main.c:103:6:HAL_ADC_ConvCpltCallback	16	static
+../Core/Src/main.c:113:5:main	24	static
+../Core/Src/main.c:191:6:SystemClock_Config	88	static
+../Core/Src/main.c:238:13:MX_ADC1_Init	24	static
+../Core/Src/main.c:324:13:MX_RTC_Init	8	static
+../Core/Src/main.c:361:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:395:13:MX_DMA_Init	16	static
+../Core/Src/main.c:413:13:MX_GPIO_Init	56	static
+../Core/Src/main.c:469:6:Error_Handler	8	static,ignoring_inline_asm
