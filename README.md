@@ -25,3 +25,15 @@ This project establishes UART communication between STM32 (DemeduKit) and ESP32.
 Bu proje, STM32 (DemeduKit) ile ESP32 arasında UART haberleşmesi kurar. STM32, ADC+DMA ile iki trimpot direnci (0-10kΩ), NTC sıcaklık (°C) ve LDR ışık (%) değerlerini okuyup ESP32'ye UART (115200 baud) ile iletir. ESP32 bu verileri bilgisayara aktarır.
 
 
+DEM_FREERTOS
+
+STM32 RTOS LED Control Project
+(Using DemeduKit with FreeRTOS)
+
+🇬🇧 English
+This project implements a multi-task LED control system using FreeRTOS on STM32. The system uses three parallel tasks that interact through a shared counter variable. The default task toggles three LEDs every second while incrementing a counter. When the counter reaches 3, a second task suspends the default task and controls another LED. At count 8, a third task activates an emergency LED and buzzer before terminating all tasks.
+
+🇹🇷 Türkçe
+Bu proje, STM32'de FreeRTOS kullanarak çoklu görevli LED kontrol sistemi kurar. Üç paralel görev, paylaşılan bir sayaç değişkeni ile etkileşir. Ana görev her saniye üç LED'i toggle ederken sayaç artar. Sayaç 3'e ulaştığında ikinci görev ana görevi duraklatıp başka bir LED'i kontrol eder. Sayaç 8'de ise üçüncü görev acil durum LED'i ve buzzerı aktifleştirip tüm görevleri sonlandırır.
+
+
