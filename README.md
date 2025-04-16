@@ -1,4 +1,4 @@
-# Demsay_Staj
+# Demsay_Internship
  
 Projects I worked on during my Demsay internship program
 
