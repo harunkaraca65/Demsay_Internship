@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;DEM_BUTTON_BUZZER/DEM_PWM_LED.ioc&apos; to &apos;DEM_BUTTON_BUZZER.ioc&apos;" description="Rename resource &apos;DEM_PWM_LED.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="DEM_PWM_LED.ioc" name="DEM_BUTTON_BUZZER.ioc" stamp="1741638272500" updateReferences="true"/>
-</session>
