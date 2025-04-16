@@ -24,12 +24,4 @@ This project establishes UART communication between STM32 (DemeduKit) and ESP32.
 🇹🇷 Türkçe:
 Bu proje, STM32 (DemeduKit) ile ESP32 arasında UART haberleşmesi kurar. STM32, ADC+DMA ile iki trimpot direnci (0-10kΩ), NTC sıcaklık (°C) ve LDR ışık (%) değerlerini okuyup ESP32'ye UART (115200 baud) ile iletir. ESP32 bu verileri bilgisayara aktarır.
 
-Algoritma:
-STM32, DMA ile 4 ADC kanalını sürekli oku
-ADC tamamlanınca:
-Trimpot değerlerini Ω'a çevir
-NTC ADC değerini °C'ye dönüştür
-LDR değerini %'ye ölçekle
-Verileri "Trimpot1,Trimpot2,Temp,Light\n" formatında UART'tan ESP32'ye gönder
-ESP32, gelen UART verilerini PC seri monitöre yazdır
 
