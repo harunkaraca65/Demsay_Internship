@@ -37,4 +37,7 @@ This project implements a multi-task LED control system using FreeRTOS on STM32.
 🇹🇷 Türkçe
 Bu proje, STM32'de FreeRTOS kullanarak çoklu görevli LED kontrol sistemi kurar. Üç paralel görev, paylaşılan bir sayaç değişkeni ile etkileşir. Ana görev her saniye üç LED'i toggle ederken sayaç artar. Sayaç 3'e ulaştığında ikinci görev ana görevi duraklatıp başka bir LED'i kontrol eder. Sayaç 8'de ise üçüncü görev acil durum LED'i ve buzzerı aktifleştirip tüm görevleri sonlandırır.
 
+DEM_ACC_ANGLE
+
+
 
