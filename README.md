@@ -51,7 +51,7 @@ DEM_PLANE_SIM
 
 STM32 & Unity Flight Control System (with DemeduKit)
 
-🇬🇧 English
+🇬🇧 English: 
 This project creates a flight control system where an STM32 (DemeduKit) reads sensor/input data and sends it via UART to a Unity-based flight simulator. The STM32 collects:
 
 Joystick/Trimpot inputs (Throttle, Yaw, Camera X/Y)
@@ -65,7 +65,7 @@ On the STM32 side, ADC is used to read joystick and potentiometer values for thr
 
 In Unity, the serial data is parsed and mapped to aircraft controls. ADC values determine speed and yaw direction, while pitch and roll values directly influence the aircraft's orientation. Camera X/Y controls offer dynamic viewing angles. Take-off mode is activated when flaps are enabled, and full control engages at a defined altitude. Additionally, a fuel consumption system is implemented for added simulation depth.
 
-🇹🇷 Türkçe
+🇹🇷 Türkçe: 
 Bu proje, STM32'nin (DemeduKit) sensör/giriş verilerini okuyup UART ile Unity tabanlı bir uçuş simülatörüne gönderdiği bir uçuş kontrol sistemi oluşturur. STM32:
 
 Joystick/Trimpot değerlerini (Gaz, Yaw, Kamera X/Y)
