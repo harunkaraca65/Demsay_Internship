@@ -49,56 +49,32 @@ Bu proje, DemeduKit'in dahili STM32 ve ESP32'sini kullanarak bir sensör izleme 
 
 DEM_PLANE_SIM
 
-🇬🇧 STM32 & Unity Flight Control System
-This project establishes a flight control system in which an STM32-based embedded device (DemeduKit) collects sensor and user input data and transmits it in real-time to a Unity-based flight simulator. The STM32 microcontroller reads joystick, potentiometer, and button inputs, and calculates pitch and roll angles using an onboard accelerometer. All data is transmitted via UART at 115200 baud to a PC running Unity.
+STM32 & Unity Flight Control System (with DemeduKit)
 
-On the Unity side, a C# script parses the incoming serial data and updates the aircraft's speed, rotation, orientation, and camera movements accordingly. In addition to basic control features, the system also includes takeoff logic, flap management, fuel consumption simulation, camera rotation, and firing controls.
+🇬🇧 English
+This project creates a flight control system where an STM32 (DemeduKit) reads sensor/input data and sends it via UART to a Unity-based flight simulator. The STM32 collects:
 
-STM32 Side Implementation:
-Reads ADC values from joystick and potentiometers (Throttle, Yaw, Cam X/Y).
+Joystick/Trimpot inputs (Throttle, Yaw, Camera X/Y)
 
-Calculates pitch and roll angles using a LIS2DW12 accelerometer.
+Accelerometer data (Pitch/Roll angles)
 
-Detects button inputs (Flaps, Brake, Fire1/2) through GPIO.
+Button states (Flaps, Brake, Fire)
+and transmits them to Unity, which controls a 3D aircraft model in real-time.
 
-Transmits all collected data in structured format over UART to the PC.
+On the STM32 side, ADC is used to read joystick and potentiometer values for throttle, yaw, and camera angle control. The LIS2DW12 accelerometer calculates pitch and roll angles, while GPIO pins monitor button inputs for additional features like flaps, braking, and firing. All this data is formatted and sent via UART at 115200 baud to the Unity application.
 
-Unity Side Implementation:
-Parses data received via the serial port and maps them to variables.
+In Unity, the serial data is parsed and mapped to aircraft controls. ADC values determine speed and yaw direction, while pitch and roll values directly influence the aircraft's orientation. Camera X/Y controls offer dynamic viewing angles. Take-off mode is activated when flaps are enabled, and full control engages at a defined altitude. Additionally, a fuel consumption system is implemented for added simulation depth.
 
-Controls aircraft speed and yaw rotation based on ADC input ranges.
+🇹🇷 Türkçe
+Bu proje, STM32'nin (DemeduKit) sensör/giriş verilerini okuyup UART ile Unity tabanlı bir uçuş simülatörüne gönderdiği bir uçuş kontrol sistemi oluşturur. STM32:
 
-Updates aircraft orientation using the provided pitch and roll values.
+Joystick/Trimpot değerlerini (Gaz, Yaw, Kamera X/Y)
 
-Adjusts the camera angle based on joystick inputs for immersive control.
+İvmeölçer verilerini (Pitch/Roll açıları)
 
-Enables takeoff mode when conditions (speed + flap) are met; full control is granted once altitude increases.
+Buton durumlarını (Flap, Fren, Ateşleme)
+toplayarak bu verileri gerçek zamanlı olarak 3D uçak modelini kontrol eden Unity uygulamasına iletir.
 
-Simulates fuel consumption over time to add realism to the experience.
+STM32 tarafında, throttle, yaw ve kamera açıları için joystick ve potansiyometre değerleri ADC ile okunur. Pitch ve roll açıları LIS2DW12 ivmeölçer ile hesaplanırken, flap, fren ve ateşleme gibi ek özellikler GPIO pinleri üzerinden algılanır. Tüm veriler yapılandırılmış formatta, 115200 baud hızında UART üzerinden Unity’ye gönderilir.
 
-🇹🇷 STM32 & Unity Uçuş Kontrol Sistemi
-Bu proje, STM32 tabanlı bir gömülü sistemin (DemeduKit) sensör ve giriş verilerini okuyarak Unity oyun motorunda geliştirilmiş bir uçuş simülasyonuna gerçek zamanlı olarak aktardığı bir uçuş kontrol sistemini kapsamaktadır. STM32 mikrodenetleyici, uçuş kontrolöründen gelen joystick, potansiyometre ve buton girişlerini toplar; ayrıca ivmeölçer (accelerometer) üzerinden uçağın eğim verilerini (pitch ve roll açıları) hesaplar. Bu veriler UART üzerinden, 115200 baud hızında seri bağlantı aracılığıyla Unity’ye aktarılır.
-
-Unity tarafında geliştirilen C# betiği, bu seri verileri işler ve 3D uçak modelinin hız, yön, açı ve kamera kontrollerini senkronize şekilde günceller. Sistem, sadece temel uçuş kontrollerini değil; aynı zamanda kalkış modu, flap kullanımı, yakıt tüketimi, kamera açısı kontrolü ve ateşleme gibi ek işlevleri de içerir.
-
-STM32 Tarafında Gerçekleştirilenler:
-ADC kullanılarak joystick ve potansiyometre verileri okunur (Throttle, Yaw, Kamera X/Y).
-
-LIS2DW12 ivmeölçer aracılığıyla pitch ve roll açıları hesaplanır.
-
-Butonlar (GPIO) üzerinden flap, fren ve ateşleme gibi girişler algılanır.
-
-Tüm bu veriler yapılandırılmış formatta UART ile bilgisayara iletilir.
-
-Unity Tarafında Gerçekleştirilenler:
-Seri port üzerinden gelen veriler ayrıştırılır ve ilgili değişkenlere aktarılır.
-
-ADC değerlerine göre uçağın hızı ve yaw hareketleri belirlenir.
-
-Pitch ve roll açıları doğrudan Unity içindeki uçağın dönüşlerine yansıtılır.
-
-Kamera X/Y kontrolleri ile uçuş sırasında oyuncuya farklı görüş açıları sağlanır.
-
-Flap açıkken kalkış modu etkinleştirilir; belirli yükseklikten sonra tam uçuş kontrolü aktif hale gelir.
-
-Yakıt zamanla azalır; bu da daha gerçekçi bir uçuş simülasyonu oluşturur.
+Unity tarafında, seri porttan gelen veriler ayrıştırılır ve uçak kontrol sistemine aktarılır. ADC değerlerine göre hız ve yön belirlenirken, pitch ve roll açıları doğrudan uçağın yönelimine etki eder. Kamera X/Y kontrolleri dinamik görüş açıları sunar. Flap aktifken kalkış modu devreye girer ve belirli bir yüksekliğe ulaşıldığında tam kontrol sağlanır. Ayrıca, yakıt tüketimi gibi ekstra simülasyon öğeleri de sisteme entegre edilmiştir.
