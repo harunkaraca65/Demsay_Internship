@@ -39,5 +39,11 @@ Bu proje, STM32'de FreeRTOS kullanarak çoklu görevli LED kontrol sistemi kurar
 
 DEM_ACC_ANGLE
 
+STM32 & ESP32 IoT Sensor System
 
+🇬🇧 English
+This project uses DemeduKit's built-in STM32 and ESP32 to create a sensor monitoring system. The STM32 reads accelerometer data (LIS2DW12) and temperature (NTC), calculates device orientation angles, and sends the data via UART to the ESP32. The ESP32 then uploads the data to ThingSpeak cloud via WiFi.
+
+🇹🇷 Türkçe
+Bu proje, DemeduKit'in dahili STM32 ve ESP32'sini kullanarak bir sensör izleme sistemi oluşturur. STM32, ivmeölçer (LIS2DW12) ve sıcaklık (NTC) verilerini okuyarak cihaz yönelim açılarını hesaplar ve UART ile ESP32'ye gönderir. ESP32 ise bu verileri WiFi üzerinden ThingSpeak bulutuna yükler.
 
